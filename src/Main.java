@@ -23,13 +23,14 @@ public class Main {
                     field[i][j] = "#";
                 }
             }
+            runs++;
         }
         try {
             field[x-1][y-1]=player;
         }
         catch (ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException)
         {
-            System.out.println("Bitte gültiges Feld eingeben (1,1-3,3)");
+            System.out.println("Bitte gültiges Feld eingeben (1 1-3 3)");
             Scanner scanner = new Scanner(System.in);
             printfield(scanner.nextInt(), scanner.nextInt(), player);
         }
@@ -43,8 +44,20 @@ public class Main {
             System.out.println("");
         }
     }
-    static String checkforwin()
+    static String movehistory(int x, int y, String currentplayer)
     {
+        int runs = 0;
+        int[] X = new int[8];
+        int[] O = new int[8];
+        if(runs==0)
+        {
+            for(int i = 0; i<X.length; i++)
+            {
+                X[i]=0;
+                O[i]=0;
+            }
+            runs++;
+        }
         return (null);
     }
 
