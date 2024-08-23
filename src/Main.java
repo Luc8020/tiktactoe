@@ -16,12 +16,11 @@ public class Main {
             if (isValidMove(x, y, field)) {
                 field[x - 1][y - 1] = currentPlayer;
                 printField(field);
-                movehistory(x, y, currentPlayer);
                 if (checkWin(field, currentPlayer)) {
                     System.out.println("Player " + currentPlayer + " wins!");
                     break;
                 }
-                currentPlayer = currentPlayer.equals("x") ? "o" : "x"; // Switch player
+                currentPlayer = currentPlayer.equals("x") ? "o" : "x";
             } else {
                 System.out.println("Invalid move. Try again.");
             }
@@ -54,13 +53,8 @@ public class Main {
         return field[x - 1][y - 1].equals("#");
     }
 
-    static void movehistory(int x, int y, String currentPlayer) {
-        // Here you could store the history of moves if needed
-        // This function is just a placeholder in this context
-    }
 
     static boolean checkWin(String[][] field, String player) {
-        // Check rows, columns, and diagonals for a win
         for (int i = 0; i < 3; i++) {
             if (field[i][0].equals(player) && field[i][1].equals(player) && field[i][2].equals(player)) {
                 return true;
